@@ -9,6 +9,7 @@
 		<input ng-model="newMessage" type="text" placeholder="Hello!">
 	</form>
 
-	<div ng-repeat="message in messages track by $index">{{ message }}</div>
+	<div ng-repeat="message in messages track by $index">
+      <h2><img src="{{message.profilepic}}" alt="" />{{message.username}}</h2> {{ message.message }} at {{ message.time | date : "h:mm a"}}</div>
 
 </div>

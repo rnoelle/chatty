@@ -7,8 +7,11 @@ angular.module('chattyApp')
     });
 
     $scope.addMessage = function ( message ) {
+      var username = window.prompt('Username');
+      var profilepic = window.prompt('profilepic');
+      console.log(message);
       if (message) {
-        messageService.addMessage(message).then(function ( response ) {
+        messageService.addMessage(message, username, profilepic).then(function ( response ) {
           $scope.messages = response.data;
         });
       }
